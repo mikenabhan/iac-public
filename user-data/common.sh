@@ -12,9 +12,8 @@ declare -A USERKEY
 # Create one entry for every user who needs access. Be sure to change the key to their
 # public key. The keys here are all my key.
 #
-USERKEY[tom]="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyFgGobmiU2H+9TA3H5lx2F/MLUErDlq65PCj8Y1goarTdbZf2sDvYJjdwA8btHGn0scoYH0cSIjxUEteA+NjIMAiG94AcN+UXJH99XmenIGxwRKvludZL1Np2UXZRPLo1JgoGyCgypS3THTbkbOxeOZ3wGAEW9YYxNhZ96cHKl1ORxFOzZ80ZS4C+LQEFDCaMykBUFxilFhvUPpuyuj9BCPfRXBDcLyYYBObKcdBvnBjC5bezg+BB/ihQNn76PJjdVVxVd2WxUtyCjf4/+Sn3R0M2VPI9AUXfmoSjZVS1nasaKmgGeftVvzL3aqzQWHabxGIhBCqdQ4+7TrIeb6Kb tom"
-USERKEY[dick]="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyFgGobmiU2H+9TA3H5lx2F/MLUErDlq65PCj8Y1goarTdbZf2sDvYJjdwA8btHGn0scoYH0cSIjxUEteA+NjIMAiG94AcN+UXJH99XmenIGxwRKvludZL1Np2UXZRPLo1JgoGyCgypS3THTbkbOxeOZ3wGAEW9YYxNhZ96cHKl1ORxFOzZ80ZS4C+LQEFDCaMykBUFxilFhvUPpuyuj9BCPfRXBDcLyYYBObKcdBvnBjC5bezg+BB/ihQNn76PJjdVVxVd2WxUtyCjf4/+Sn3R0M2VPI9AUXfmoSjZVS1nasaKmgGeftVvzL3aqzQWHabxGIhBCqdQ4+7TrIeb6Kb dick"
-USERKEY[harry]="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyFgGobmiU2H+9TA3H5lx2F/MLUErDlq65PCj8Y1goarTdbZf2sDvYJjdwA8btHGn0scoYH0cSIjxUEteA+NjIMAiG94AcN+UXJH99XmenIGxwRKvludZL1Np2UXZRPLo1JgoGyCgypS3THTbkbOxeOZ3wGAEW9YYxNhZ96cHKl1ORxFOzZ80ZS4C+LQEFDCaMykBUFxilFhvUPpuyuj9BCPfRXBDcLyYYBObKcdBvnBjC5bezg+BB/ihQNn76PJjdVVxVd2WxUtyCjf4/+Sn3R0M2VPI9AUXfmoSjZVS1nasaKmgGeftVvzL3aqzQWHabxGIhBCqdQ4+7TrIeb6Kb harry"
+USERKEY[mike]="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyFgGobmiU2H+9TA3H5lx2F/MLUErDlq65PCj8Y1goarTdbZf2sDvYJjdwA8btHGn0scoYH0cSIjxUEteA+NjIMAiG94AcN+UXJH99XmenIGxwRKvludZL1Np2UXZRPLo1JgoGyCgypS3THTbkbOxeOZ3wGAEW9YYxNhZ96cHKl1ORxFOzZ80ZS4C+LQEFDCaMykBUFxilFhvUPpuyuj9BCPfRXBDcLyYYBObKcdBvnBjC5bezg+BB/ihQNn76PJjdVVxVd2WxUtyCjf4/+Sn3R0M2VPI9AUXfmoSjZVS1nasaKmgGeftVvzL3aqzQWHabxGIhBCqdQ4+7TrIeb6Kb tom"
+USERKEY[ansible]="ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCyFgGobmiU2H+9TA3H5lx2F/MLUErDlq65PCj8Y1goarTdbZf2sDvYJjdwA8btHGn0scoYH0cSIjxUEteA+NjIMAiG94AcN+UXJH99XmenIGxwRKvludZL1Np2UXZRPLo1JgoGyCgypS3THTbkbOxeOZ3wGAEW9YYxNhZ96cHKl1ORxFOzZ80ZS4C+LQEFDCaMykBUFxilFhvUPpuyuj9BCPfRXBDcLyYYBObKcdBvnBjC5bezg+BB/ihQNn76PJjdVVxVd2WxUtyCjf4/+Sn3R0M2VPI9AUXfmoSjZVS1nasaKmgGeftVvzL3aqzQWHabxGIhBCqdQ4+7TrIeb6Kb dick"
 
 declare -A SUDOUSER
 
@@ -22,7 +21,8 @@ declare -A SUDOUSER
 # Add one entry below for each user who needs sudo access.
 # The usernames should be same as above.
 #
-SUDOUSER[tom]=y
+SUDOUSER[mike]=y
+SUDOUSER[ansible]=y
 
 # Iterate through all users (based on the associative array USERKEY)
 for user in "${!USERKEY[@]}" ; do
